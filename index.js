@@ -44,3 +44,5 @@ async function start() {
 }
 
 start();
+// setting 5 seconds timeout using setInterval
+// setInterval(start, 5000);
