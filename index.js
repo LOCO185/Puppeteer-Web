@@ -23,7 +23,7 @@ const fs = require("fs/promises");
   const photos = await page.$$eval("img", (imgs) => {
     return imgs.map((x) => x.src);
   });
-
+  
   // looping and visiting the url for the images
   for (const photo of photos) {
     const imagePage = await page.goto(photo);
