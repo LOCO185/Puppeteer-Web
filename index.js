@@ -19,11 +19,16 @@ const fs = require("fs/promises");
   // creating file and writing the names inside of it
   await fs.writeFile("names.txt", names.join("\r\n"));
 
+  // getting the data on button clicked
+  await page.click("#clickme");
+  const clickedData = await page.$eval("#data", (el) => el.textContent);
+  console.log(clickedData);
+
   // getting the images
   const photos = await page.$$eval("img", (imgs) => {
     return imgs.map((x) => x.src);
   });
-  
+
   // looping and visiting the url for the images
   for (const photo of photos) {
     const imagePage = await page.goto(photo);
