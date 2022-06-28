@@ -19,6 +19,9 @@ async function example() {
   // Number of Employees
   await page.select("#employees", "51-500");
 
+  //  Create a screenshot of the page before clicking the “Request a call back” button.
+  await page.screenshot({ path: "Page1.png" });
+
   await browser.close();
 }
 
