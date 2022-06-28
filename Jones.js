@@ -11,8 +11,10 @@ async function example() {
 
   // Email
   await page.$eval("#email", (el) => (el.value = "test@example.com"));
+
   // Phone
   await page.$eval("#phone", (el) => (el.value = "0526572337"));
+
   // Company fields
   await page.$eval("#company", (el) => (el.value = "Jones"));
 
@@ -35,7 +37,7 @@ async function example() {
   // console.log when reaching the thank you page
   const clickedData = await page.$eval("h2", (el) => el.textContent);
   console.log(clickedData);
-  
+
   await browser.close();
 }
 
