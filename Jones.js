@@ -13,6 +13,11 @@ async function example() {
   await page.$eval("#email", (el) => (el.value = "test@example.com"));
   // Phone
   await page.$eval("#phone", (el) => (el.value = "0526572337"));
+  // Company fields
+  await page.$eval("#company", (el) => (el.value = "Jones"));
+
+  // Number of Employees
+  await page.select("#employees", "51-500");
 
   await browser.close();
 }
