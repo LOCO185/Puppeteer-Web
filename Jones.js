@@ -36,7 +36,7 @@ async function example() {
   // console.log when reaching the thank you page
   const clickedData = await page.$eval("h2", (el) => el.textContent);
   console.log(clickedData);
-// 
+  
   await browser.close();
 }
 
