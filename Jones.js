@@ -1,9 +1,11 @@
 const puppeteer = require("puppeteer");
 
+const URL = "http://contractorsinsurancereview.com/ExampleForm/";
+
 async function example() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto("http://contractorsinsurancereview.com/ExampleForm/");
+  await page.goto(URL);
 
   // Name
   await page.$eval("#name", (el) => (el.value = "Jawad Asaad"));
@@ -24,17 +26,13 @@ async function example() {
   await page.screenshot({ path: "Page1.png" });
 
   // Click the “Request a call back” button
-  await Promise.all([
-    await page.click(
-      "body > div > div.row > div.large-5.medium-5.columns > div > form > p:nth-child(8) > button"
-    ),
-  ]);
+  await page.click(".primary");
 
   // Screenshot Thank You page
-  await page.screenshot({ path: "Page2.png" });
+  await page.screenshot({ path: "thankYouPage.png" });
 
   // console.log when reaching the thank you page
-  const clickedData = await page.$eval("h2", (el) => el.textContent);
+  const clickedData = await page.$eval(".text-center", (el) => el.textContent);
   console.log(clickedData);
 
   await browser.close();
