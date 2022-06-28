@@ -7,7 +7,10 @@ async function example() {
 
   // Name
   // example 1
-  await page.$eval('#name', el => el.value = 'Jawad Asaad');
+  await page.$eval("#name", (el) => (el.value = "Jawad Asaad"));
+
+  // Email
+  await page.$eval("#email", (el) => (el.value = "test@example.com"));
 
   await browser.close();
 }
