@@ -21,13 +21,16 @@ async function example() {
 
   //  Create a screenshot of the page before clicking the “Request a call back” button.
   await page.screenshot({ path: "Page1.png" });
-  
+
   // Click the “Request a call back” button
   await Promise.all([
     await page.click(
       "body > div > div.row > div.large-5.medium-5.columns > div > form > p:nth-child(8) > button"
     ),
   ]);
+
+  // Screenshot Thank You page
+  await page.screenshot({ path: "Page2.png" });
 
   await browser.close();
 }
