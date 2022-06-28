@@ -6,7 +6,6 @@ async function example() {
   await page.goto("http://contractorsinsurancereview.com/ExampleForm/");
 
   // Name
-  // example 1
   await page.$eval("#name", (el) => (el.value = "Jawad Asaad"));
 
   // Email
