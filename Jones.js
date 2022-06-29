@@ -31,10 +31,6 @@ async function example() {
   // Screenshot Thank You page
   await page.screenshot({ path: "thankYouPage.png" });
 
-  // console.log when reaching the thank you page
-  const clickedData = await page.$eval(".text-center", (el) => el.textContent);
-  console.log(clickedData);
-
   await browser.close();
 }
 
