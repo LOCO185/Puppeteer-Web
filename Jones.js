@@ -28,9 +28,6 @@ async function example() {
   // Click the “Request a call back” button
   await page.click(".primary");
 
-  // Screenshot Thank You page
-  await page.screenshot({ path: "thankYouPage.png" });
-
   await browser.close();
 }
 
